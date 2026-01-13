@@ -25,7 +25,7 @@ jobs:
       - name: Publish
         run: >
           dotnet publish
-          src/WinScreenLayout.Cli/WinScreenLayout.Cli.csproj
+          src/WinScreenLayout.Cli/winscreenlayout.Cli.csproj
           -c Release
           -r win-x64
           --self-contained false
