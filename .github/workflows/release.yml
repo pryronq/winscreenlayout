@@ -34,3 +34,9 @@ jobs:
         with:
           name: winscreenlayout-win-x64
           path: out/*
+          
+      - name: Upload to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: out/*
+
