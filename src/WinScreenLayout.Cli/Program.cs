@@ -1,4 +1,5 @@
 using System;
+using System.Text.Json;
 
 static int Usage()
 {
@@ -23,12 +24,14 @@ return cmd switch
 
 static int Save(string name)
 {
-    Console.WriteLine($"[TODO] save layout: {name}");
+    var layout = WindowCapture.Capture();
+    LayoutStore.Save(name, layout);
+    Console.WriteLine($"Saved layout: {name}");
     return 0;
 }
 
 static int Apply(string name)
 {
-    Console.WriteLine($"[TODO] apply layout: {name}");
-    return 0;
+    var layout = LayoutStore.Load(name);
+    return WindowApply.Apply(layout);
 }
