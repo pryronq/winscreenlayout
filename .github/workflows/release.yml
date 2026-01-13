@@ -38,9 +38,12 @@ jobs:
         with:
           name: winscreenlayout-win-x64
           path: out/*
-          
+            
       - name: Upload to release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
           files: out/*
+
 
