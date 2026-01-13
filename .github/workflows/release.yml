@@ -44,6 +44,6 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           name: ${{ github.ref_name }}
-          files: out/*
+          files: out/*.exe
 
 
